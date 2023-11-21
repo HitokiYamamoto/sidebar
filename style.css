@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,11 +11,17 @@ body {
 
 .navigation {
   height: 100vh;
-  width: 300px;
+  width: 70px;
   position: relative;
   background-color: #4d4c86;
   box-shadow: 10px 0 0 #c77946;
   border-left: 10px solid #4d4c86;
+  overflow-x: hidden;
+  transition: all 0.5s;
+}
+
+.navigation:hover {
+  width: 300px;
 }
 
 .navigation ul {
@@ -63,5 +70,31 @@ body {
 }
 
 .navigation ul li:hover {
-  background-color: #353463;
+  background-color: #35346369;
+}
+
+.navigation ul li.active {
+  background-color: #c77946;
+}
+
+.navigation ul li.active::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -30px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #c77946;
+}
+
+.navigation ul li.active::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 60px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0 #c77946;
 }
